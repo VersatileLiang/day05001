@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "com.ssm.dao.NewActivityDao">
+
+	<select id = "findNewActivity" parameterType = "java.util.Map" resultType = "com.ssm.entity.NewActivity">
+		select username,password
+		from new_act
+		where username=#{username} and password=#{password}
+	</select>
+
+    <select id = "getAllNewActivityList" resultType = "com.ssm.entity.NewActivity">
+		select * from new_act
+	</select>
+
+    <select id = "getNewActivity" parameterType = "String" resultType = "com.ssm.entity.NewActivity">
+		select * from new_act where id=#{id}
+	</select>
+
+    <delete id = "deleteNewActivity" parameterType = "String">
+		delete from new_act where id = #{id}
+	</delete>
+
+</mapper>
